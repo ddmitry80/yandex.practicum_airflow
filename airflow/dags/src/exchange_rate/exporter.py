@@ -42,7 +42,7 @@ class ParseExchangeRate:
         df = pd.DataFrame()
         date_formats = {
             "date": "%Y-%m-%d",
-            "datetime": "%Y-%m-%dT%H:$m:%S"
+            "datetime": "%Y-%m-%dT%H:%m:%S"
         }
         export_dates = pd.date_range(start=start_date, end=end_date)
         for date in export_dates:
