@@ -2,6 +2,13 @@ from typing import Optional
 
 
 def validate_date(export_date: str, data_date: str, date_fmt: str) -> Optional[str]:
+    """
+    Checking the correctness of the date received from the api 
+    and recording this data in accordance with the selected data format
+    :param export_date: date of data upload specified by the user
+    :param data_date: date when data was uploaded from the api
+    :param date_fmt: the data format specified by the user (date: %Y-%m-%d, datetime: %Y-%m-%dT%H:%m:%S)
+    """
     _export_date = export_date.split("T")[0]
 
     # create datetime
@@ -15,6 +22,10 @@ def validate_date(export_date: str, data_date: str, date_fmt: str) -> Optional[s
 
 
 def validate_rate(rate: float) -> Optional[float]:
+    """
+    Checking the correctness of the rate received from the api
+    :param rate: rate when data was uploaded from the api
+    """
     if isinstance(rate, float):
         return rate
     raise ValueError("Rate is not a float type number")
