@@ -3,7 +3,7 @@ from datetime import timedelta
 from airflow.models import DAG
 from airflow.utils.dates import days_ago
 from airflow.operators.python_operator import PythonOperator
-from airflow_clickhouse_plugin.hooks.clickhouse_hook import ClickHouseHook
+from airflow_clickhouse_plugin.hooks.clickhouse import ClickHouseHook
 from src.exchange_rate.exporter import ParseExchangeRate
 
 DAG_ID = "HISTORY-PARSE_PAIRS_FROM_EXCHANGERATE"
